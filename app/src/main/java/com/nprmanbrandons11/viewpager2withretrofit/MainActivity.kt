@@ -34,10 +34,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        adapter= ViewPagerAdapter(images)
+        adapter= ViewPagerAdapter(images,{->listenerNext()},{->listenerBack()})
         binding.vp2.adapter = adapter
         initIndicator()
-        binding.btnSiguiente.setOnClickListener {
+
+/*        binding.btnSiguiente.setOnClickListener {
             Toast.makeText(this, "${currentImage}", Toast.LENGTH_SHORT).show()
             if (adapter.itemCount -1 == currentImage){
                 currentImage = 0
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 binding.vp2.setCurrentItem(currentImage)
             }
             transitionDots()
-        }
+        }*/
         //binding.vp2.orientation = ViewPager2.ORIENTATION_VERTICAL
         /*binding.vp2.beginFakeDrag()
         binding.vp2.fakeDragBy(-10f)
@@ -88,6 +89,26 @@ class MainActivity : AppCompatActivity() {
                 tvDots[i].setBackgroundResource(R.drawable.indicator_void)
             }
         }
+    }
+    public fun listenerNext(){
+        if (adapter.itemCount -1 == currentImage){
+            currentImage = 0
+            binding.vp2.setCurrentItem(currentImage)}
+        else{
+            currentImage++
+            binding.vp2.setCurrentItem(currentImage)
+        }
+        transitionDots()
+    }
+    public fun listenerBack(){
+        if (0 == currentImage){
+            currentImage = adapter.itemCount -1
+            binding.vp2.setCurrentItem(currentImage)}
+        else{
+            currentImage--
+            binding.vp2.setCurrentItem(currentImage)
+        }
+        transitionDots()
     }
 
 }

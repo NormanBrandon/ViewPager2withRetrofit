@@ -33,23 +33,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/vp2"/>
 
-    <Button
-        android:id="@+id/btnAnteror"
-        android:layout_width="85dp"
-        android:layout_height="355dp"
-        android:background="@drawable/invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/vp2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dots" />
-
-    <Button
-        android:id="@+id/btnSiguiente"
-        android:layout_width="322dp"
-        android:layout_height="352dp"
-        android:background="@drawable/invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/vp2"
-        app:layout_constraintEnd_toEndOf="@+id/vp2"
-        app:layout_constraintTop_toTopOf="@+id/dots" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
