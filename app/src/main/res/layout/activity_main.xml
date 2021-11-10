@@ -6,16 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="354dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/dots"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vp2"/>
+
+    <Button
+        android:id="@+id/btnAnteror"
+        android:layout_width="85dp"
+        android:layout_height="355dp"
+        android:background="@drawable/invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/vp2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dots" />
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="322dp"
+        android:layout_height="352dp"
+        android:background="@drawable/invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/vp2"
+        app:layout_constraintEnd_toEndOf="@+id/vp2"
+        app:layout_constraintTop_toTopOf="@+id/dots" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
